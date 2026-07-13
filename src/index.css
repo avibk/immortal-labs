@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Sterile Medical Grid Background */
+.clinical-grid {
+  background-color: #fafbfc;
+  background-image: 
+    radial-gradient(#e2e8f0 1.5px, transparent 1.5px), 
+    radial-gradient(#e2e8f0 1.5px, #fafbfc 1.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Custom Base clamp text styling */
+.text-clamp-body {
+  font-size: clamp(14px, 1.2vw + 10px, 18px);
+  line-height: 1.6;
+}
+
+/* Hologram foil style premium security badges */
+.hologram-seal {
+  background: linear-gradient(135deg, #06b6d4 0%, #10b981 30%, #3b82f6 70%, #06b6d4 100%);
+  background-size: 200% 200%;
+  animation: hologram-wave 4s ease infinite;
+}
+
+@keyframes hologram-wave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Smooth custom slide sheet animations */
+.bottom-sheet-transition {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-transition {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Scrollbar styling for sterile, high-end medical design */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+  border-left: 1px solid #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border: 2px solid #f8fafc;
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Touch targets must have a minimum hit area of 44x44px on mobile */
+.mobile-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slide search bar */
+.search-slide-enter {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.search-slide-enter.active {
+  max-height: 120px;
+  opacity: 1;
+}
+
+/* Pulsing medical status indicator lights */
+.led-pulse-cyan {
+  box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7);
+  animation: pulse-cyan 1.5s infinite;
+}
+
+@keyframes pulse-cyan {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(6, 182, 212, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+  }
+}
+
+.led-pulse-emerald {
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-emerald 1.5s infinite;
+}
+
+@keyframes pulse-emerald {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* HPLC chromatography wave visualization */
+.chromatogram-svg {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-wave 2s ease-in-out forwards;
+}
+
+@keyframes draw-wave {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+

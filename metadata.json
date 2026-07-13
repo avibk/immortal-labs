@@ -1,0 +1,6 @@
+{
+  "name": "Immortal Labs",
+  "description": "High-trust medical-grade peptide and therapeutic compound store featuring security verification, laboratory analytics, and seamless clinical shopping.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
