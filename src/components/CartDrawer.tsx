@@ -1,4 +1,4 @@
-import { useState, TouchEvent } from "react";
+import { useState } from "react";
 import { CartItem } from "../types";
 import { X, Plus, Minus, Trash2, ShieldCheck, Lock, Truck, CreditCard } from "lucide-react";
 
@@ -19,31 +19,6 @@ export default function CartDrawer({
   onRemoveItem,
   onOpenCheckout,
 }: CartDrawerProps) {
-  const [touchStartY, setTouchStartY] = useState<number | null>(null);
-  const [sheetOffset, setSheetOffset] = useState<number>(0);
-
-  // Swipe-down to close on mobile grab-handle
-  const handleTouchStart = (e: TouchEvent) => {
-    setTouchStartY(e.touches[0].clientY);
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    if (touchStartY === null) return;
-    const currentY = e.touches[0].clientY;
-    const diffY = currentY - touchStartY;
-    if (diffY > 0) {
-      setSheetOffset(diffY);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    if (sheetOffset > 80) {
-      onClose();
-    }
-    setSheetOffset(0);
-    setTouchStartY(null);
-  };
-
   // Calculations
   const subtotal = cartItems.reduce((acc, item) => {
     const unitPrice = item.kitType === "10kit" ? item.product.price10 * 10 : item.product.price;
@@ -61,34 +36,31 @@ export default function CartDrawer({
         onClick={onClose}
       />
 
-      {/* MOBILE BOTTOM SHEET (< 768px): covers 85% height to prevent cutoff, slides up, swipe down to close */}
+      {/* MOBILE BOTTOM SHEET (< 768px): covers 85% height to prevent cutoff, slides up, close via X button */}
       <div
         className="absolute bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl flex flex-col md:hidden bottom-sheet-transition border-t border-slate-200"
         style={{
           height: "85vh",
-          transform: `translateY(${sheetOffset}px)`,
         }}
       >
-        {/* Grab Handle for Swiping */}
-        <div 
-          className="w-full py-3 flex flex-col items-center cursor-row-resize select-none"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          <div className="w-12 h-1.5 bg-slate-300 rounded-full mb-1" />
-          <span className="text-[10px] font-mono text-slate-400 font-bold tracking-widest uppercase">SWIPE DOWN TO CLOSE CART</span>
-        </div>
-
-        {/* Content of Bottom Sheet */}
-        <div className="px-4 pb-2 border-b border-slate-100 flex items-center justify-between">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse" />
-            <h2 className="text-sm font-display font-bold text-slate-900 uppercase tracking-tight">Active Formula Cart</h2>
+        {/* Mobile Header matching desktop dark theme, rounded top corners */}
+        <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-900 text-white rounded-t-2xl">
+          <div className="flex items-center gap-2">
+            <div className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
+            <h2 className="text-sm font-display font-bold uppercase tracking-wider">Active Formula Cart</h2>
           </div>
-          <span className="text-xs font-mono font-medium text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded">
-            {cartItems.length} Compounds
-          </span>
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] font-mono font-medium text-cyan-400 bg-slate-800 px-2 py-0.5 rounded">
+              {cartItems.length} Compounds
+            </span>
+            <button 
+              onClick={onClose}
+              className="text-slate-400 hover:text-white p-1 rounded-md hover:bg-slate-800 transition-colors cursor-pointer mobile-touch-target"
+              title="Close Cart"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Scrollable list */}
