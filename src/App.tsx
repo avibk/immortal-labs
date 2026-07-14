@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { products, Product } from "./data/products";
 import { CartItem, CheckoutFormData, VerificationLog } from "./types";
 import ProductCard from "./components/ProductCard";
+import { motion, AnimatePresence } from "motion/react";
+// @ts-ignore
+import vialHgh from "./assets/images/vial_hgh_1783932766464.jpg";
+// @ts-ignore
+import vialSemaglutide from "./assets/images/vial_semaglutide_1783932732907.jpg";
+// @ts-ignore
+import vialTirzepatide from "./assets/images/vial_tirzepatide_1783932743467.jpg";
 import CartDrawer from "./components/CartDrawer";
 import CheckoutModal from "./components/CheckoutModal";
 import ProductQuickView from "./components/ProductQuickView";
@@ -56,6 +63,16 @@ function getBaseProductName(name: string): string {
 export default function App() {
   // Navigation & UI States
   const [activeTab, setActiveTab] = useState<"home" | "search" | "cart" | "contact" | "coas">("home");
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [vialHgh, vialSemaglutide, vialTirzepatide];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % 3);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
@@ -594,6 +611,31 @@ export default function App() {
                 swiss: "bg-white border-2 border-black text-black rounded-none"
               }[designPreset]
             }`}>
+              {/* Slideshow Background */}
+              <div className={`absolute inset-0 z-0 pointer-events-none overflow-hidden ${
+                designPreset === "swiss" ? "bg-white" : "bg-slate-950"
+              }`}>
+                <AnimatePresence mode="popLayout">
+                  <motion.img
+                    key={currentSlide}
+                    src={slides[currentSlide]}
+                    alt="Immortal Labs backdrop slideshow"
+                    initial={{ x: "-100%", opacity: 0 }}
+                    animate={{ 
+                      x: "0%",
+                      opacity: designPreset === "swiss" ? 0.38 : 0.26, 
+                    }}
+                    exit={{ x: "100%", opacity: 0 }}
+                    transition={{ duration: 1.5, ease: "easeInOut" }}
+                    className={`absolute inset-0 w-full h-full object-cover ${
+                      designPreset === "swiss" 
+                        ? "" 
+                        : "invert hue-rotate-180 brightness-110 contrast-125 mix-blend-screen"
+                    }`}
+                  />
+                </AnimatePresence>
+              </div>
+
               {designPreset !== "swiss" && (
                 <div className="absolute top-0 right-0 h-48 w-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
               )}
