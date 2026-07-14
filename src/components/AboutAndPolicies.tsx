@@ -31,7 +31,7 @@ export function AboutAndPolicies() {
       id: "terms",
       title: "Terms of Service",
       icon: <FileText className="w-4 h-4 text-stone-600" />,
-      content: "Chemical products and reference standards synthesized by Immortal Labs are designed and supplied strictly for in vitro laboratory analysis, research purposes, and diagnostic verification. Under no circumstances are these products formulated, intended, or authorized for human clinical therapy, therapeutic prescription, direct administration, or consumer applications. All institutional buyers represent and warrant full compliance with state and federal laboratory biosafety guidelines."
+      content: "1. RESEARCH-USE ONLY (RUO) MANDATE:\nAll peptide compounds, biochemical reagents, and analytical reference standards synthesized and supplied by Immortal Labs are intended strictly for in vitro laboratory research, clinical diagnostic validation, and chemical analysis. Under no circumstances are any products formulated, intended, or authorized for direct human consumption, therapeutic use, veterinary practice, agricultural administration, or cosmetic formulation. Reagents must not be introduced into human or animal clinical workflows under any scenario.\n\n2. CHEMICAL & PHYSICAL COMPLIANCE:\nThe buyer (defined as the purchasing researcher, medical institution, or laboratory coordinator) represents and warrants that they possess the necessary licensing, specialized safety equipment, and certified professional personnel required to store, handle, and analyze hazardous, uncharacterized, or highly concentrated peptide sequences safely. All buyers represent complete compliance with state, federal, and international biosafety guidelines, maintaining rigorous disposal and laboratory containment protocols.\n\n3. MACROMOLECULAR STABILITY & STORAGE PROTOCOLS:\nPeptides are complex, temperature-sensitive macromolecules prone to active oxidation, deamidation, thermal degradation, and peptide bond cleavage. Upon laboratory receipt, the buyer must store all dry, vacuum-desiccated lyophilized vials in a dry freezer at -20°C (or -80°C for deep archival storage). Reconstitution of biological standards must occur in sterile environments under ISO Class 5 laminar flow hood cabinets using bacteriostatic water or scientific-grade sterile diluents. Immortal Labs denies any responsibility for product degradation or structural breakdown occurring due to improper chemical reconstitution or storage post-delivery.\n\n4. TOXICOLOGICAL & PHARMACOLOGICAL LIMITATIONS:\nThe full physiological, toxicological, and pharmacological profiles of these synthetic compounds have not been thoroughly mapped or investigated. Due to their status as clinical-stage or preclinical chemical assets, hazard potential must be handled with supreme caution. All research personnel must wear double-nitrile protective gloves, fluid-resistant lab coats, and safety goggles to prevent dermal adsorption or accidental inhalation. The absence of an established toxicology profile means the user must treat all substances as potentially hazardous reagents.\n\n5. SYSTEMATIC LIABILITY DISCLAIMER:\nImmortal Labs, its scientific directors, laboratory technicians, synthesizers, and distribution coordinators shall not be held liable for any damages, personal injuries, clinical side effects, or organizational liabilities resulting from the handling, misuse, unauthorized therapeutic trial, storage, or hazardous disposal of purchased reagents. The buyer agrees to fully indemnify, defend, and hold harmless Immortal Labs against any and all legal claims, administrative fines, or losses arising out of unauthorized or clinical application of the supplied laboratory compounds."
     }
   ];
 
@@ -83,8 +83,12 @@ export function AboutAndPolicies() {
                 </button>
                 
                 {isOpen && (
-                  <div className="px-4 pb-4 pt-1 border-t border-stone-100 text-[11px] leading-relaxed text-stone-600 font-sans">
-                    {policy.content}
+                  <div className="px-4 pb-4 pt-2 border-t border-stone-100 text-[11px] leading-relaxed text-stone-600 font-sans space-y-3">
+                    {policy.content.split("\n\n").map((paragraph, index) => (
+                      <p key={index} className="last:mb-0">
+                        {paragraph}
+                      </p>
+                    ))}
                   </div>
                 )}
               </div>

@@ -67,9 +67,8 @@ export default function CartDrawer({
         <div className="flex-1 overflow-y-auto px-4 py-3 divide-y divide-slate-100">
           {cartItems.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center p-6">
-              <span className="text-4xl">🧪</span>
-              <p className="mt-2 text-xs font-mono font-semibold text-slate-400">NO ITEMS LOADED</p>
-              <p className="text-[11px] text-slate-400 mt-1">Select diagnostic standards to queue for laboratory shipping.</p>
+              <span className="text-4xl mb-2">🧪</span>
+              <p className="text-sm font-medium text-slate-500 font-display">Your cart is empty</p>
             </div>
           ) : (
             cartItems.map((item) => {
@@ -165,10 +164,7 @@ export default function CartDrawer({
           {cartItems.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-center py-20 px-6">
               <span className="text-5xl mb-3">🔬</span>
-              <p className="text-xs font-mono font-bold text-slate-400 tracking-wider">NO COMPOUNDS DETECTED</p>
-              <p className="text-xs text-slate-400 mt-2 max-w-xs">
-                Your molecular synthesis ledger is currently vacant. Double click compound cards on the catalog shelf to review specifications and insert high-purity formulas here.
-              </p>
+              <p className="text-sm font-medium text-slate-500 font-display">Your cart is empty</p>
             </div>
           ) : (
             cartItems.map((item) => {
