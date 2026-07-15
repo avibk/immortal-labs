@@ -104,7 +104,124 @@ By completing a purchase on our website, you expressly acknowledge, agree, and c
       id: "shipping",
       title: "Shipping & Delivery",
       icon: <Globe className="w-4 h-4 text-stone-600" />,
-      content: "All biological synthesis compounds are vacuum-desiccated and dispatched in temperature-stabilized cold-chain parcels to maintain peptide stability. Orders are prepared and shipped via premier logistics couriers within 24 standard business hours of validation. Secure tracking indicators are registered and delivered directly to the laboratory coordinator's secure mail gateway."
+      content: `SHIPPING & DELIVERY POLICY
+Last Updated: 14 July, 2026
+
+This Shipping & Delivery Policy forms an integral part of our Terms of Service. By placing an order, you expressly agree to all terms set forth herein.
+
+1. Order Processing & Validation
+1.1 Order Confirmation Trigger. Order processing begins only after the following conditions are met:
+
+(a) Your cryptocurrency payment has received the required number of blockchain confirmations (as determined by our system); and
+
+(b) Your institutional eligibility and shipping address have been successfully validated against our internal compliance protocols.
+
+1.2 Processing Timeframe. Upon successful validation, orders are prepared and dispatched within 24 standard business hours. Our business hours are Monday through Friday, excluding internationally recognized public holidays. Orders validated on weekends or holidays will commence processing on the next standard business day.
+
+1.3 Order Verification. Due to the research-use-only nature of our products, we reserve the right to delay dispatch for up to 72 hours if we require additional institutional verification documentation to ensure regulatory compliance.
+
+2. Packaging & Cold-Chain Preservation
+2.1 Vacuum-Desiccated Preparation. All peptide compounds and biochemical reagents are meticulously vacuum-desiccated and sealed in sterile, inert-glass vials to prevent moisture ingress and oxidative degradation prior to dispatch.
+
+2.2 Temperature-Stabilized Cold-Chain Parcels. To maintain macromolecular stability and peptide integrity during transit, all shipments are packaged in temperature-stabilized cold-chain parcels. Depending on the specific compound's stability profile, shipments are dispatched using:
+
+Insulated thermal shippers with phase-change gel packs (maintaining -20°C to 0°C); or
+
+Dry-ice encapsulated containers (maintaining -78°C for deep archival-grade compounds).
+
+2.3 Barrier Protection. All vials are secured within padded, shock-absorbent interior packaging to minimize mechanical stress and physical breakage during standard courier handling procedures.
+
+3. Carrier Selection & Dispatch
+3.1 Premier Logistics Couriers. We exclusively utilize premier international courier services with dedicated cold-chain logistics divisions (e.g., DHL Express, FedEx Priority, or UPS Worldwide). The specific carrier is selected at our sole discretion based on the destination country's customs infrastructure and transit time reliability.
+
+3.2 Dispatch Location. All products are dispatched from our certified laboratory facility. The buyer is the designated importer of record for all international shipments.
+
+4. Tracking & Notification
+4.1 Secure Tracking Registration. Upon dispatch, a unique, secure tracking indicator is registered with the carrier and forwarded directly to the laboratory coordinator's provided email address.
+
+4.2 Real-Time Monitoring. You will receive automated courier notifications regarding shipment milestones, including:
+
+Pickup confirmation
+
+Transit scans
+
+Customs clearance initiation
+
+Estimated delivery window
+
+Final delivery confirmation
+
+4.3 Coordinator Responsibility. It is the sole responsibility of the purchasing laboratory coordinator to monitor the provided tracking link actively. We are not obligated to provide manual status updates during transit.
+
+5. Delivery Timeframes (Estimates Only)
+5.1 Domestic Shipments (within country of origin): Typically delivered within 2 to 5 business days from dispatch.
+
+5.2 International Shipments: Estimated delivery times range from 5 to 14 business days, depending on the destination country, customs processing volumes, and local courier handover schedules.
+
+5.3 No Guaranteed Delivery Dates. All delivery timeframes provided are estimates only. We do not guarantee delivery by a specific date and shall not be held liable for delays caused by the courier, customs, weather events, or any other factor beyond our direct operational control.
+
+6. Customs, Duties, and Import Clearance (Critical)
+6.1 Buyer as Importer of Record. For all international orders, the Buyer is the sole importer of record. Title and full risk of loss pass to the Buyer upon the product being handed to the carrier at our facility.
+
+6.2 Customs Documentation. We provide all legally required shipping documentation, including:
+
+Commercial invoices
+
+Certificates of Analysis (CoA)
+
+Material Safety Data Sheets (MSDS)
+
+Country-specific customs declaration forms
+
+6.3 Buyer Responsibilities. The Buyer is exclusively responsible for:
+
+Ensuring that the ordered peptides are legally importable into the destination country.
+
+Paying all applicable import duties, local taxes, customs brokerage fees, and administrative handling charges imposed by the destination country.
+
+Responding promptly to any customs inquiries, license requests, or inspection holds.
+
+6.4 Customs Seizure, Delay, or Destruction. We explicitly disclaim all liability for:
+
+Customs seizures, confiscations, or destruction of the shipment by authorities in the destination country.
+
+Extended customs holds, inspections, or clearance delays beyond our control.
+
+Additional storage or demurrage fees charged by the courier or customs broker due to the Buyer's failure to promptly clear the shipment.
+
+Under no circumstances will refunds, reshipments, or credits be issued for shipments seized, detained, or destroyed by customs authorities. (Refer to our Refund Policy.)
+
+7. Incorrect or Undeliverable Addresses
+7.1 Address Verification. It is the Buyer's sole responsibility to provide a complete, accurate, and deliverable shipping address at the time of purchase. We are not responsible for verifying address accuracy beyond standard courier validation tools.
+
+7.2 Failed Delivery Attempts. If a shipment is returned to us due to:
+
+An incorrect or incomplete address provided by the Buyer;
+
+The Buyer's failure to arrange customs clearance or pay duties;
+
+The Buyer's refusal to accept the package; or
+
+The Buyer's unavailability for delivery after multiple courier attempts;
+
+the shipment will be considered abandoned. We will not issue any refund, and the Buyer assumes full financial loss for the abandoned goods. Reshipment, if technically feasible and legally permissible, will require full repurchase of the product, including new shipping fees.
+
+8. Inspection Upon Receipt
+8.1 Immediate Inspection Required. Upon delivery, the Buyer must immediately inspect the external packaging for visible damage (e.g., crushed boxes, torn insulation, or leaking gel packs) before accepting the shipment from the courier.
+
+8.2 Documenting Damage. If the external packaging shows evidence of severe physical trauma that could compromise the internal vials, the Buyer should:
+
+Note the damage on the courier's delivery manifest before signing.
+
+Take dated, high-resolution photographs of the damaged external packaging and internal contents.
+
+8.3 Claims Window. Any claim relating to physical damage that occurred exclusively prior to handover to the carrier in our country of origin must be submitted within 14 calendar days of delivery, accompanied by the required photographic evidence. Claims submitted after this window will not be entertained.
+
+9. Force Majeure
+We shall not be held liable for any failure or delay in performance of our shipping obligations resulting from events beyond our reasonable control, including but not limited to: natural disasters (earthquakes, floods, storms), public health emergencies (pandemics, quarantines), governmental actions (export bans, embargoes), labor disputes, courier service interruptions, civil unrest, or cybersecurity disruptions affecting logistics networks.
+
+10. Entire Agreement
+This Shipping & Delivery Policy, together with our Terms of Service, Refund Policy, and Privacy Policy, constitutes the entire agreement between the Buyer and Immortal Labs regarding the shipment and delivery of purchased products.`
     },
     {
       id: "terms",
@@ -238,13 +355,13 @@ These Terms constitute the entire agreement between the Buyer and Immortal Labs 
       {/* About Us Section */}
       <section className="mb-8">
         <span className="text-[10px] uppercase font-bold tracking-widest text-stone-500 block mb-2">
-          ORGANIZATION OVERVIEW // EST. 2026
+          IMMORTAL LABS // EST. 2026
         </span>
         <h2 className="font-display font-black text-xl md:text-2xl uppercase tracking-tight mb-3">
           ABOUT IMMORTAL LABS
         </h2>
         <p className="text-xs text-stone-700 leading-relaxed font-sans max-w-3xl">
-          Immortal Labs is a state-of-the-art laboratory synthesis facility committed to the provisioning of ultra-pure chemical reagents and certified lyophilized peptide reference standards. We supply premier research universities, scientific institutions, and clinical laboratories globally. Our advanced formulations are verified via HPLC chromatography and mass spectrometry to exceed a strict 99.8% purity matrix, ensuring pristine research purposes, biological diagnostic validation, and analytical reproducibility.
+          Immortal Labs is dedicated to the development and synthesis of ultra-pure biochemical reagents, complex organic compounds, and premium lyophilized peptide reference standards of uncompromising caliber. Driven by an exacting standard of molecular integrity, our focus is centered on perfecting synthesis pathways to deliver compounds of unparalleled consistency and structural fidelity. Each batch of chemical agents and molecular formulas undergoes comprehensive analytical verification, utilizing state-of-the-art High-Performance Liquid Chromatography (HPLC) and Mass Spectrometry (MS) validation to guarantee an exceptional 99.8% purity index. By maintaining rigorous quality assurance protocols and minimizing environmental interference during synthesis, we ensure that every formulation stands as a reliable standard for analytical reproducibility, precise molecular verification, and pristine chemical research. Our goal is to sell high quality research chemicals for research purposes.
         </p>
       </section>
 
