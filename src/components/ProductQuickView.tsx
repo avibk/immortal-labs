@@ -116,7 +116,11 @@ export default function ProductQuickView({ product, onClose, onAddToCart }: Prod
               </span>
             </div>
 
-            <h2 className="font-display font-black text-stone-900 text-lg leading-tight mb-1 uppercase">
+            <h2 className={`font-display font-black text-stone-900 leading-tight mb-1 uppercase ${
+              baseName.length > 25 
+                ? "text-[15px] md:text-base" 
+                : "text-lg"
+            }`}>
               {baseName}
             </h2>
             <div className="flex flex-wrap gap-1.5 mb-3">

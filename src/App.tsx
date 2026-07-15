@@ -518,7 +518,11 @@ export default function App() {
                 <div className="md:w-1/2 flex flex-col justify-center">
                   <div className="space-y-4">
                     <div className="text-center">
-                      <h1 className="font-display font-black text-xl md:text-2xl uppercase tracking-tight text-black leading-tight text-center">
+                      <h1 className={`font-display font-black uppercase tracking-tight text-black leading-tight text-center ${
+                        getBaseProductName(activeProduct.name).length > 25
+                          ? "text-lg md:text-xl"
+                          : "text-xl md:text-2xl"
+                      }`}>
                         {getBaseProductName(activeProduct.name)}
                       </h1>
 
@@ -744,24 +748,24 @@ export default function App() {
       </main>
 
       {/* 7. SECURE PAYMENT BADGES IN SITE FOOTER */}
-      <footer className="bg-white border-t border-slate-200 py-8 text-center text-xs font-mono text-slate-400 space-y-4">
+      <footer className="bg-white border-t-2 border-black py-8 text-center text-xs font-mono text-stone-500 space-y-4">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <FlaskConical className="w-4 h-4 text-slate-400" />
-            <span className="font-display font-bold text-slate-700">IMMORTAL LABS</span>
+            <FlaskConical className="w-4 h-4 text-black" />
+            <span className="font-display font-black text-black uppercase tracking-wider">IMMORTAL LABS</span>
           </div>
           
           {/* Secure Payment logos and badges */}
           <div className="flex flex-wrap gap-4 justify-center items-center">
-            <span className="flex items-center gap-1.5"><Lock className="w-3.5 h-3.5 text-cyan-600" /> PCI DSS compliant</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 256-bit AES Crypt</span>
-            <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-2 py-1 rounded">
-              <span className="text-[9px] font-bold text-slate-500">ACCEPTED PAYMENTS:</span>
-              <span className="text-[9px] text-cyan-700 font-bold font-display uppercase tracking-widest">Crypto (BTC, ETH, SOL)</span>
+            <span className="flex items-center gap-1.5 text-black font-bold uppercase text-[10px]"><Lock className="w-3.5 h-3.5 text-black" /> PCI DSS compliant</span>
+            <span className="flex items-center gap-1.5 text-black font-bold uppercase text-[10px]"><ShieldCheck className="w-3.5 h-3.5 text-black" /> 256-bit AES Crypt</span>
+            <div className="flex items-center gap-1.5 bg-stone-50 border border-black px-2 py-1 rounded-none">
+              <span className="text-[9px] font-black text-black">ACCEPTED PAYMENTS:</span>
+              <span className="text-[9px] text-black font-black font-display uppercase tracking-widest">Crypto (BTC, ETH, SOL)</span>
             </div>
           </div>
 
-          <p className="text-[10px] text-slate-400">
+          <p className="text-[10px] text-stone-400">
             © 2026 Immortal Labs. Strictly for Research Purposes & Chemical Diagnostic Validation.
           </p>
         </div>

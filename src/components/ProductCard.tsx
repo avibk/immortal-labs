@@ -82,8 +82,8 @@ export default function ProductCard({ product, onClick, designPreset = "swiss", 
 
         {/* Product Details - Compact & Minimalist */}
         <div className="p-2 md:p-2.5 flex flex-col justify-between flex-1">
-          <div className="space-y-1">
-            <div className="flex flex-wrap items-center gap-1.5 mb-0.5">
+          <div className="space-y-2">
+            <div className="flex flex-wrap items-center gap-1.5">
               <span className="text-[10px] md:text-[11px] font-mono bg-cyan-50 text-cyan-800 border border-cyan-200 font-bold uppercase tracking-wide px-1.5 py-0.5">
                 CODE: {product.code}
               </span>
@@ -92,30 +92,35 @@ export default function ProductCard({ product, onClick, designPreset = "swiss", 
               </span>
             </div>
             
-            <div className="flex items-center justify-between gap-2.5">
-              <h3 className="font-display font-black tracking-tight text-base md:text-lg lg:text-xl uppercase text-black line-clamp-1 group-hover:text-stone-700 transition-colors flex-1 leading-none">
-                {baseName}
-              </h3>
-              <div className="text-right shrink-0 font-mono bg-stone-50 border border-stone-200 px-3 py-1.5 shadow-xs">
-                <span className="block text-[10px] md:text-[11px] text-stone-500 uppercase font-black leading-none mb-1 tracking-wider">
-                  {variants.length > 1 ? "STARTING" : "PRICE"}
+            <h3 className="font-display font-black tracking-tight uppercase text-black line-clamp-2 group-hover:text-stone-700 transition-colors leading-tight text-sm md:text-base lg:text-lg min-h-[2.5rem] flex items-center">
+              {baseName}
+            </h3>
+
+            <div className="flex items-center justify-between pt-1.5 border-t border-stone-100">
+              {/* Potency options tags or default status */}
+              {potencies.length > 1 ? (
+                <div className="flex flex-wrap gap-1">
+                  {potencies.map((p, i) => (
+                    <span key={i} className="text-[9px] font-mono bg-stone-50 text-stone-800 border border-stone-200 px-1 py-0.5 uppercase font-medium tracking-wide">
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <span className="text-[9px] font-mono text-stone-400 font-bold uppercase tracking-wider">
+                  {product.dose}
                 </span>
-                <span className="text-xl md:text-2xl font-black text-black block leading-none">
+              )}
+
+              <div className="text-right shrink-0 font-geist bg-stone-50 border border-stone-200 px-2 py-1 shadow-2xs flex items-center gap-1.5">
+                <span className="text-[9px] text-stone-500 uppercase font-black leading-none tracking-wider">
+                  {variants.length > 1 ? "FROM" : "PRICE"}
+                </span>
+                <span className="text-base md:text-lg font-black text-black block leading-none">
                   {variants.length > 1 ? `$${minPrice.toFixed(0)}` : `$${product.price.toFixed(0)}`}
                 </span>
               </div>
             </div>
-            
-            {/* Potency options tags */}
-            {potencies.length > 1 && (
-              <div className="pt-0.5 flex flex-wrap gap-1">
-                {potencies.map((p, i) => (
-                  <span key={i} className="text-[9px] md:text-[10px] font-mono bg-stone-100 text-stone-900 border border-black px-1.5 py-0.5 uppercase font-black tracking-wide shadow-xs">
-                    {p}
-                  </span>
-                ))}
-              </div>
-            )}
           </div>
         </div>
       </div>
