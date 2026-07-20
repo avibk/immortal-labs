@@ -158,7 +158,7 @@ export default function CheckoutModal({
           {/* Buttons Area */}
           <div className="flex flex-col gap-2.5">
             <a
-              href="https://t.me/ImmortalLabs"
+              href="https://t.me/astnpk"
               target="_blank"
               referrerPolicy="no-referrer"
               rel="noopener noreferrer"
