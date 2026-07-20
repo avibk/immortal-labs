@@ -13,8 +13,7 @@ export function AboutAndPolicies() {
       id: "privacy",
       title: "Privacy Policy",
       icon: <ShieldCheck className="w-4 h-4 text-stone-600" />,
-      content: `REVISED PRIVACY POLICY
-PRIVACY POLICY
+      content: `PRIVACY POLICY
 
 Last Updated: 14 July, 2026
 
@@ -62,8 +61,7 @@ Address: Technoparkstrasse 1, 8005 Zürich, Switzerland`
       id: "refund",
       title: "Refund Policy",
       icon: <HelpCircle className="w-4 h-4 text-stone-600" />,
-      content: `REVISED REFUND & CANCELLATION POLICY
-REFUND, CANCELLATION, AND SHIPPING RISK POLICY
+      content: `REFUND & CANCELLATION POLICY
 
 Last Updated: 14 July, 2026
 

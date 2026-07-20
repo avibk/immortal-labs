@@ -644,30 +644,67 @@ export default function App() {
                 <div className="absolute top-0 right-0 h-48 w-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
               )}
               
-              <div className="max-w-2xl relative z-10">
-                <span className={`inline-flex items-center gap-1.5 font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2.5 shadow-sm ${
-                  {
-                    sterile: "bg-cyan-950 border border-cyan-800/40 text-cyan-300",
-                    midnight: "bg-cyan-950 border border-cyan-800/40 text-cyan-300",
-                    cyber: "bg-yellow-950 border border-yellow-500/20 text-yellow-400",
-                    swiss: "bg-black text-white rounded-none"
-                  }[designPreset]
-                }`}>
+              <motion.div 
+                className="max-w-2xl relative z-10"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.15,
+                    }
+                  }
+                }}
+              >
+                <motion.span 
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                  }}
+                  className={`inline-flex items-center gap-1.5 font-mono text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2.5 shadow-sm ${
+                    {
+                      sterile: "bg-cyan-950 border border-cyan-800/40 text-cyan-300",
+                      midnight: "bg-cyan-950 border border-cyan-800/40 text-cyan-300",
+                      cyber: "bg-yellow-950 border border-yellow-500/20 text-yellow-400",
+                      swiss: "bg-black text-white rounded-none"
+                    }[designPreset]
+                  }`}
+                >
                   <ShieldCheck className={`w-3.5 h-3.5 ${designPreset === 'swiss' ? 'text-white' : 'text-emerald-400 animate-pulse'}`} />
                   99.8%+ Ultra-Pure Synthesizers
-                </span>
-                <h1 className={`font-display font-bold tracking-tight leading-none ${
-                  designPreset === 'swiss' ? 'text-black text-2xl md:text-3xl font-black' : 'text-white text-xl md:text-3xl'
-                }`}>
+                </motion.span>
+                <motion.h1 
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                  }}
+                  className={`font-display font-bold tracking-tight leading-none ${
+                    designPreset === 'swiss' ? 'text-black text-2xl md:text-3xl font-black' : 'text-white text-xl md:text-3xl'
+                  }`}
+                >
                   Clinical-Grade Peptides. Zero Compromise.
-                </h1>
-                <p className={`mt-1 leading-snug text-clamp-body ${
-                  designPreset === 'swiss' ? 'text-stone-800 font-sans' : 'text-slate-300 font-sans'
-                }`}>
+                </motion.h1>
+                <motion.p 
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                  }}
+                  className={`mt-1 leading-snug text-clamp-body ${
+                    designPreset === 'swiss' ? 'text-stone-800 font-sans' : 'text-slate-300 font-sans'
+                  }`}
+                >
                   cGMP-engineered, HPLC-verified reference standards, shipped with cold-chain integrity for diagnostics and research.
-                </p>
+                </motion.p>
 
-                <div className="mt-2.5 flex flex-wrap gap-1.5 md:gap-2 items-center text-[9.5px] md:text-[10px] font-mono font-bold uppercase">
+                <motion.div 
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                  }}
+                  className="mt-2.5 flex flex-wrap gap-1.5 md:gap-2 items-center text-[9.5px] md:text-[10px] font-mono font-bold uppercase"
+                >
                   <span className="inline-flex items-center gap-1.5 px-2.5 py-1 border border-black bg-black text-white rounded-none shadow-[1.5px_1.5px_0px_rgba(0,0,0,1)]">
                     <ShieldCheck className="w-3 h-3 text-white" />
                     cGMP Certified
@@ -680,8 +717,8 @@ export default function App() {
                     <Thermometer className="w-3 h-3 text-white" />
                     Cold-Chain Secured
                   </span>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
 
             {/* CLASSIFIED CATEGORY SELECTORS REMOVED */}
@@ -761,7 +798,7 @@ export default function App() {
             <span className="flex items-center gap-1.5 text-black font-bold uppercase text-[10px]"><ShieldCheck className="w-3.5 h-3.5 text-black" /> 256-bit AES Crypt</span>
             <div className="flex items-center gap-1.5 bg-stone-50 border border-black px-2 py-1 rounded-none">
               <span className="text-[9px] font-black text-black">ACCEPTED PAYMENTS:</span>
-              <span className="text-[9px] text-black font-black font-display uppercase tracking-widest">Crypto (BTC, ETH, SOL)</span>
+              <span className="text-[9px] text-black font-normal font-mono uppercase tracking-widest">Crypto (BTC)</span>
             </div>
           </div>
 

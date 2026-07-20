@@ -252,7 +252,7 @@ export default function CartDrawer({
               <div className="flex items-center gap-2 justify-between border-t border-stone-200 pt-2 text-[9px] text-stone-600 font-mono font-bold">
                 <span className="flex items-center gap-1"><ShieldCheck className="w-3 h-3 text-black" /> cGMP Audited</span>
                 <span className="flex items-center gap-1"><Truck className="w-3 h-3 text-black" /> Cold-Chain Shipped</span>
-                <span className="flex items-center gap-1"><CreditCard className="w-3 h-3 text-black" /> Card & Crypto</span>
+                <span className="flex items-center gap-1"><CreditCard className="w-3 h-3 text-black" /> Crypto (BTC)</span>
               </div>
             </div>
 
