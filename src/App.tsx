@@ -3,6 +3,7 @@ import { products, Product } from "./data/products";
 import { CartItem, CheckoutFormData, VerificationLog } from "./types";
 import ProductCard from "./components/ProductCard";
 import { motion, AnimatePresence } from "motion/react";
+import { Analytics } from "@vercel/analytics/react";
 // @ts-ignore
 import vialHgh from "./assets/images/vial_hgh_1783932766464.jpg";
 // @ts-ignore
@@ -1031,6 +1032,8 @@ export default function App() {
         </div>
       )}
 
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
